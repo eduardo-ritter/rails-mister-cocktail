@@ -2,3 +2,14 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "banner";
+
+.container {
+  background-image: url('../../images/rainbow.jpg');
+  border: 1px solid black;
+}
+
+.card {
+  height: 200px;
+  
+}

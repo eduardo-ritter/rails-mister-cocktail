@@ -1,0 +1,28 @@
+<!-- As a link -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Cocktails</a>
+</nav>
+
+<div class="home-banner text-center">
+  <p>
+    <span id="banner-typed-text"></span>
+  </p>
+</div>
+
+
+<div class="container d-flex align-items-center justify-content-around">
+  <div class="row">
+    <% @cocktails.each_with_index do |cocktail, index| %>
+      <div class="col-sm-3 card m-3" data-aos="flip-left">
+        <%= index+1 %>. <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="footer">
+  <small><%= link_to "+Add Cocktail", new_cocktail_path %></small>
+</div>
+
+<script>
+  AOS.init();
+</script>

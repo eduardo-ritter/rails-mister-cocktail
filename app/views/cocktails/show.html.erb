@@ -1,0 +1,20 @@
+<small>cocktails / show.html.erb</small>
+<br>
+<h3>details from:</h3>
+<hr>
+<h1><%= @cocktail.name %> </h1>
+<p>Doses:</p>
+<% @doses.each do |dose| %>
+  <p># <%= dose.description %> </p>
+  <small>- - - - -</small>
+  <small><%= link_to 'delete', 
+             cocktail_dose_path(@cocktail.id, dose.id), 
+             method: :delete,
+             data: { confirm: "Are you sure?" } %></small>
+  <p></p>
+<% end %>
+<br>
+<hr>
+<%= link_to '+Add 1 Dose', "/cocktails/#{@cocktail.id}/doses/new" %>
+<br>
+<%= link_to 'Home', cocktails_path %>
