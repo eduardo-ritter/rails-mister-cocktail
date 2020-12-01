@@ -3,6 +3,7 @@
 <h3>details from:</h3>
 <hr>
 <h1><%= @cocktail.name %> </h1>
+<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
 <p>Doses:</p>
 <% @doses.each do |dose| %>
   <p># <%= dose.description %> </p>
@@ -11,7 +12,7 @@
              cocktail_dose_path(@cocktail.id, dose.id), 
              method: :delete,
              data: { confirm: "Are you sure?" } %></small>
-  <p></p>
+  <br>
 <% end %>
 <br>
 <hr>

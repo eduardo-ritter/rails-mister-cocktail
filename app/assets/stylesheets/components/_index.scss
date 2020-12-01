@@ -9,7 +9,17 @@
   background: linear-gradient(90deg, rgba(233,235,27,1) 0%, rgba(107,28,222,1) 18%, rgba(215,18,158,1) 35%, rgba(38,236,101,1) 61%, rgba(246,158,3,1) 80%, rgba(0,212,255,1) 100%);
   font-weight: bold;
   font-size: 32px;
+  text-shadow: 2px solid black;
   border-radius: 10px;
-  border: 1px dashed yellow;
   padding: 4px 80px;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
 }

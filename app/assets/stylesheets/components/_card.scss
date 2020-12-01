@@ -1,13 +1,24 @@
 .cocktail-cards {
   border-radius: 3px;
-  margin: 16px 32px;
+  margin: 32px 32px;
   padding: 0 auto;
 }
 
 .cocktail-card {
-  height: 200px;
-  border-radius: 3px;
-  border: 1px solid gray;
-  background: rgba(0,0,0,0.5);
-  margin: 0 16px 16px 16px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  margin: 0 32px 32px 32px;
+  color: white !important;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none !important;
+  box-shadow: 0 0 5px yellow;
+  &:hover {
+    background-image: url('<%= cl_image_path(array, width: 400, height: 300, crop: :fit)');
+  }
 }
+

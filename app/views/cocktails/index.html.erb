@@ -13,10 +13,33 @@
 <div class="cocktail-cards d-flex align-items-center justify-content-around">
   <div class="row">
     <% @cocktails.each_with_index do |cocktail, index| %>
+      
+      <% array = ["d10_v2jmca", "d9_bbzlxf", "d6_wgn7pd", "d8_etgkjl", "d7_lkxbhf", "d1_exgqm6", "d2_dyi8qf", "d3_x8kn6k", "d4_zamq2f", "d5_axrint"].sample %>
+      
       <div class="col-sm-12 col-md-6 col-lg-4" >
-        <div class="cocktail-card" data-aos="flip-left">
-          <%= index+1 %>. <%= link_to cocktail.name, cocktail_path(cocktail) %>
-        </div>
+        
+        <% if cocktail.photo.attached? %>
+
+          <div class="cocktail-card"
+               data-aos="flip-left"
+               style="background-image: linear-gradient(rgba(0,0,0,0.3),
+                                        rgba(0,0,0,0.3)),
+                                        url('<%= cl_image_path(cocktail.photo.key, width: 400, height: 300, crop: :fill) %>') ">
+            <p><%= index+1 %>. <%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+          </div>
+
+        <% else %>
+
+          <div class="cocktail-card"
+               data-aos="flip-left"
+               style="background-image: linear-gradient(rgba(0,0,0,0.3),
+                                        rgba(0,0,0,0.3)),
+                                        url('<%= cl_image_path(array, width: 400, height: 300, crop: :fit) %>') ">
+            <p><%= index+1 %>. <%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+          </div>
+
+        <% end %>
+        
       </div>
     <% end %>
   </div>
