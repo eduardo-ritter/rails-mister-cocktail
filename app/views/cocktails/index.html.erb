@@ -1,20 +1,22 @@
 <!-- As a link -->
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">PokéMon<small style="color: gray">Cocktails</small></a>
+  <div class="home-banner text-center">
+    <p>
+      <span class="moving-text" id="banner-typed-text"></span>
+    </p>
+  </div>
 </nav>
 
-<div class="home-banner text-center">
-  <p>
-    <span id="banner-typed-text"></span>
-  </p>
-</div>
 
 
-<div class="container d-flex align-items-center justify-content-around">
+<div class="cocktail-cards d-flex align-items-center justify-content-around">
   <div class="row">
     <% @cocktails.each_with_index do |cocktail, index| %>
-      <div class="col-sm-3 card m-3" data-aos="flip-left">
-        <%= index+1 %>. <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      <div class="col-sm-12 col-md-6 col-lg-4" >
+        <div class="cocktail-card" data-aos="flip-left">
+          <%= index+1 %>. <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
       </div>
     <% end %>
   </div>

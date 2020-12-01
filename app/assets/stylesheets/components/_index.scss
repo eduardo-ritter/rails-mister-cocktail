@@ -3,21 +3,13 @@
 @import "avatar";
 @import "navbar";
 @import "banner";
+@import "card";
 
-.container {
-  background-color:  rgba(226, 222, 222, 0.623);
-  border: 1px solid rgba(187, 187, 187, 0.671);
-  box-shadow: 0 0 3px black;
-  border-radius: 3px;
-  margin: 0 auto;
-  padding: 0 auto;
-}
-
-.card {
-  height: 200px;
-  background-color: cadetblue;
-}
-
-body {
-  background-color: rgba(187, 187, 187, 0.671) ;
+.moving-text {
+  background: linear-gradient(90deg, rgba(233,235,27,1) 0%, rgba(107,28,222,1) 18%, rgba(215,18,158,1) 35%, rgba(38,236,101,1) 61%, rgba(246,158,3,1) 80%, rgba(0,212,255,1) 100%);
+  font-weight: bold;
+  font-size: 32px;
+  border-radius: 10px;
+  border: 1px dashed yellow;
+  padding: 4px 80px;
 }
